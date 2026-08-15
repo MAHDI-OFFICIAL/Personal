@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <!-- ========== GOOGLE KNOWLEDGE PANEL META TAGS ========== -->
     <link rel="canonical" href="https://sheikhmahadi.xyz" />
@@ -143,6 +143,7 @@
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             padding: 16px 34px;
             background: transparent;
@@ -154,6 +155,7 @@
             font-family: 'Space Grotesk', sans-serif;
             cursor: pointer;
             transition: var(--transition);
+            text-align: center;
         }
         .btn:hover { border-color: var(--ember-1); transform: translateY(-4px); box-shadow: var(--glow); }
 
@@ -443,7 +445,7 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in { animation: fadeInUp 0.7s ease forwards; }
 
-        /* ===== Responsive ===== */
+        /* ===== RESPONSIVE (phone-first) ===== */
         @media (max-width: 1100px) {
             .hero-top, .about-content, .contact-container { grid-template-columns: 1fr; }
             .hero-right { padding-top: 1.5rem; }
@@ -473,12 +475,31 @@
             .hero-left h1 { font-size: clamp(2.6rem, 9vw, 3.6rem); }
             section { padding: 80px 0; }
             .trust-inner { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+
+            /* phone adjustments for grid */
+            .grid-3 { grid-template-columns: 1fr; }
+            .achievements-grid { grid-template-columns: 1fr; }
+            .modeling-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+            .modeling-grid .m-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+            .modeling-grid .m-item:nth-child(4) { grid-column: span 2; }
+            .contact-container { grid-template-columns: 1fr; }
+            .contact-form { padding: 1.8rem; }
+            .filter-row { gap: 0.6rem; }
+            .filter-btn { padding: 10px 18px; font-size: 0.8rem; }
+            .hero-btns .btn { width: 100%; justify-content: center; }
         }
         @media (max-width: 480px) {
             .hero-btns { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
             .modeling-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
             .modeling-grid .m-item:nth-child(1), .modeling-grid .m-item:nth-child(4) { grid-column: span 1; }
+            .focus-strip { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .focus-item .label { font-size: 0.85rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .timeline-content { padding: 1.5rem; }
+            .timeline-item { padding-left: 40px; padding-right: 10px; }
+            .social-link { width: 44px; height: 44px; font-size: 1.1rem; }
+            .nav-cta { padding: 8px 16px; font-size: 0.85rem; }
         }
     </style>
 </head>
